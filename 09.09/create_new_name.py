@@ -10,7 +10,8 @@ def gen_name(big_letters, little_letters, num):
         s = ''
         for x in range(0, 5):
             s += chr(choice(big_letters))
-            s += chr(choice(little_letters)) * 8
+            for y in range(0, 9):
+                s += chr(choice(little_letters))
 
             if x < 4:
                 s += ' '
