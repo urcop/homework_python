@@ -1,5 +1,5 @@
-from random import choice
 import string
+from random import choice
 
 
 def rand_str(length):
@@ -44,6 +44,9 @@ def ratio(array):
     ratio_big = (big_letters / len(array)) * 100
     ratio_small = (small_letters / len(array)) * 100
     ratio_equal = (equal / len(array)) * 100
-    s = f'В этой строке {round(ratio_big)}% строк где заглавных букв больше + {round(ratio_small)}% \
+    s = f'В этой строке {round(ratio_big)}% строк где заглавных букв больше {round(ratio_small)}% \
 строк где маленьких букв больше {round(ratio_equal)}% строк где и маленьких и больших букв поровну'
     return s
+
+
+print(ratio(array_of_strings(5, 9)))
