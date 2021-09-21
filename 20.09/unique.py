@@ -1,9 +1,6 @@
 def unique(list):
-    result = []
-    for i in list:
-        if list.count(i) == 1:
-            result.append(i)
-    return result
+    set_list = set(list)
+    return [i for i in set_list if list.count(i) == 1]
 
 
 def intersection(list_1, list_2):
