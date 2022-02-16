@@ -8,20 +8,14 @@ def alignment(list_of_items: list, pos: str, symbol_to_fill: str, count_of_symbo
     :return: aligned strings
     """
     result = ''
-    if pos in ['center', 'right', 'left']:
-        if pos == 'center':
-            for item in list_of_items:
-                result += '\n {0:{1}^{2}s}'.format(item, symbol_to_fill, count_of_symbols)
-        elif pos == 'right':
-            for item in list_of_items:
-                result += '\n {0:{1}>{2}s}'.format(item, symbol_to_fill, count_of_symbols)
-        elif pos == 'left':
-            for item in list_of_items:
-                result += '\n {0:{1}<{2}s}'.format(item, symbol_to_fill, count_of_symbols)
-        return result
-    else:
-        return 'incorrect position to alignment'
+    position = {
+        'center': '^',
+        'left': '<',
+        'right': '>',
+    }
+    for item in list_of_items:
+        result += '{0:{1}{3}{2}s} \n'.format(item, symbol_to_fill, count_of_symbols, position[pos])
+    return result
 
 
 print(alignment(['1233112', '124122', '1234'], 'center', '*', 20))
-print(alignment.__doc__)
