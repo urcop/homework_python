@@ -7,15 +7,16 @@ def alignment(list_of_items: list, pos: str, symbol_to_fill: str, count_of_symbo
     :param count_of_symbols: is a count symbols in string
     :return: aligned strings
     """
-    result = ''
+    result = list()
     position = {
         'center': '^',
         'left': '<',
         'right': '>',
     }
+    pos = pos.lower()
     for item in list_of_items:
-        result += '{0:{1}{3}{2}s} \n'.format(item, symbol_to_fill, count_of_symbols, position[pos])
-    return result
+        result.append('{0:{1}{3}{2}s}'.format(item, symbol_to_fill, count_of_symbols, position[pos]))
+    return '\n'.join(result)
 
 
-print(alignment(['1233112', '124122', '1234'], 'center', '*', 20))
+print(alignment(['1233112', '124122', '1234'], 'CeNter', '*', 20))
