@@ -1,3 +1,4 @@
+import random
 from random import randint
 
 
@@ -22,11 +23,14 @@ class Race:
 
     @staticmethod
     def play(array_of_cars, laps):
+        x = sorted(array_of_cars)
         result = []
-        for _ in range(laps):
-            random_car = randint(0, len(array_of_cars) - 1)
-            result.append(array_of_cars.pop(random_car))
-        result += sorted(array_of_cars, reverse=True)
+        for i in range(laps):
+            a = random.choice(x)
+            x.remove(a)
+            result.append(a)
+        result.extend(x)
+        result.reverse()
         return result
 
 
@@ -34,11 +38,10 @@ c1 = Car(70, 'Ferrari')
 c2 = Car(300, 'Tesla')
 c3 = Car(90, 'Bentley')
 c4 = Car(23, 'Lada')
-c5 = Car(74, 'Kirill')
+c5 = Car(74, 'Keril')
 c6 = Car(84, 'bymve')
 
 array_of_car = [c1, c2, c3, c4, c5, c6]
 
 if __name__ == "__main__":
-    race1 = Race()
-    view_result(race1, 3)
+    view_result(Race(), 3)

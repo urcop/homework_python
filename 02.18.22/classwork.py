@@ -78,13 +78,13 @@ def witch_sys():
 
 witch_sys()
 
-# def change_in_file(file, to_change, for_change):
-#     if file.split('.')[-1] == 'txt' and os.path.isfile(file) and os.path.exists(file):
-#         f = open(file)
+# def change_in_file(logpassfile, to_change, for_change):
+#     if logpassfile.split('.')[-1] == 'txt' and os.path.isfile(logpassfile) and os.path.exists(logpassfile):
+#         f = open(logpassfile)
 #         for line in f:
 #             if line.__contains__(to_change):
 #                 new_line = line.replace(to_change, for_change)
-#                 f = open(file, 'w')
+#                 f = open(logpassfile, 'w')
 #                 f.write(new_line)
 #     else:
 #         print('нипорядок')

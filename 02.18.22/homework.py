@@ -1,7 +1,7 @@
 import os
 
 
-def replace_text(file: str, to_replace: str, for_replace: str):
+def replace_text(file: str, to_replace: str, for_replace: str) -> str:
     if os.path.exists(file) and file.split('.')[-1] == 'txt' and os.path.isfile(file):
         result = []
         with open(file, 'r') as f:

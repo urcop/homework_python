@@ -19,4 +19,5 @@ def alignment(list_of_items: list, pos: str, symbol_to_fill: str, count_of_symbo
     return '\n'.join(result)
 
 
-print(alignment(['1233112', '124122', '1234'], 'CeNter', '*', 20))
+if __name__ == '__main__':
+    print(alignment(['1233112', '124122', '1234'], 'CeNter', '*', 20))
